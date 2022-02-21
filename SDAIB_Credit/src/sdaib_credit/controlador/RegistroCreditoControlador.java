@@ -63,6 +63,11 @@ public class RegistroCreditoControlador implements IRegistroCredito{
                     + "' no se encuentra registrada");
             return;
         }
+        Credito crd = gestorCreditos.getCredito(id);
+        if(crd != null){
+            JOptionPane.showMessageDialog(null, "Ya se ha registrado un credito con id: " + id);
+            return;
+        }
         //credito.setIdAcreedor(cliente.getIdentificacion());
         Credito credito = new Credito(id, monto, idAcreedor);
         cliente.addCredito(id);

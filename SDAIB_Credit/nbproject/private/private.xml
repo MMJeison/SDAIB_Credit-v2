@@ -3,18 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/Cliente.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/GestorCreditos.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/persistencia/Creditos.json</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/Persona.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/Usuario.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/persistencia/Clientes.json</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/Credito.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/GestorJSON.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/GestorUsuarios.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/persistencia/Usuarios.json</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/GestorClientes.java</file>
-            <file>file:/D:/UdeA/5to%20Semestre/Analisis%20y%20diseño%20de%20sistemas%20II/Proyecto%20de%20Curso/Proyecto/SDAIB_Credit/src/sdaib_credit/modelo/IGestionClientes.java</file>
+            <file>file:/D:/Escritorio/Proyecto/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Usuario.java</file>
         </group>
     </open-files>
 </project-private>
