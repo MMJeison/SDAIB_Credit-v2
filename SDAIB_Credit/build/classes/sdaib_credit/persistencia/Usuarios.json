@@ -1,0 +1,30 @@
+[
+{
+  "username": "Admin1",
+  "password": "Password1",
+  "nivelAcceso": 3,
+  "nombre": "Administrador1",
+  "identificacion": "0001"
+},
+{
+  "username": "Asr1",
+  "password": "Password1",
+  "nivelAcceso": 2,
+  "nombre": "Asesor1",
+  "identificacion": "0002"
+},
+{
+  "username": "Caj1",
+  "password": "Password1",
+  "nivelAcceso": 1,
+  "nombre": "Cajero1",
+  "identificacion": "0003"
+},
+{
+  "username": "Asr2",
+  "password": "Password2",
+  "nivelAcceso": 2,
+  "nombre": "Asesor2",
+  "identificacion": "0004"
+}
+]
