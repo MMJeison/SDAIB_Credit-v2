@@ -11,9 +11,7 @@ package sdaib_credit.modelo;
  */
 public class Pago {
     
-    private String monto;
     private String id;
-    private String idCredito;
-    
+    private String idCuota;
     
 }
