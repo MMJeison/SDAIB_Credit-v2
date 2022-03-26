@@ -1,9 +1,17 @@
 [
 {
   "creditos": [
-    "00001"
+    "00001",
+    "00002"
   ],
   "nombre": "Cliente1",
   "identificacion": "001"
+},
+{
+  "creditos": [
+    "00003"
+  ],
+  "nombre": "Jorge",
+  "identificacion": "002"
 }
 ]

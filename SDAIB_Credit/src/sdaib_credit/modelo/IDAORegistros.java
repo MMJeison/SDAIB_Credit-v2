@@ -5,13 +5,15 @@
  */
 package sdaib_credit.modelo;
 
+import java.util.List;
+
 /**
  *
  * @author User
  */
-public interface IGestionCreditos {
-    
-    public Credito getCredito(String id);
-    public boolean registrarCredito(Credito credito);
-    
+public interface IDAORegistros<T> {
+    public T getRegistro(String id);
+    public boolean actualizarRegistro(T registro);
+    public boolean guardarRegistro(T registro);
+    public List<T> getListRegistros();
 }

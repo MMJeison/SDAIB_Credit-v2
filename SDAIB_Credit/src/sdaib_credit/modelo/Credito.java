@@ -30,24 +30,20 @@ public class Credito {
         this.montoActual = monto;
         this.idAcreedor = idAcreedor;
     }
-    
-    public static Credito getCredito(String id, IGestorDataBase gestor){
-        Credito aux = null;
-        List<Credito> creditos = gestor.obtenerRegistros();
-        for(Credito cred : creditos){
-            if(cred.idEquualsTo(id)){
-                aux = cred;
-                break;
-            }
-        }
-        return aux;
+
+    public String getId() {
+        return id;
     }
-    public boolean idEquualsTo(String id){
-        return this.id.equals(id);
+
+    public String getMontoInicial() {
+        return montoInicial;
     }
-    public static boolean registrarCredito(Credito credito, IGestorDataBase gestor) {
-        return gestor.guardarRegistro(credito);
+
+    public String getMontoActual() {
+        return montoActual;
     }
-    
-    
+
+    public String getIdAcreedor() {
+        return idAcreedor;
+    }
 }

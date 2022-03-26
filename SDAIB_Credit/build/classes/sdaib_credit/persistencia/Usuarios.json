@@ -26,5 +26,12 @@
   "nivelAcceso": 2,
   "nombre": "Jeison",
   "identificacion": "1003294397"
+},
+{
+  "username": "Pablito",
+  "password": "pablito123",
+  "nivelAcceso": 2,
+  "nombre": "Pablo",
+  "identificacion": "100100"
 }
 ]

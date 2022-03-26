@@ -9,10 +9,6 @@ package sdaib_credit.modelo;
  *
  * @author User
  */
-public interface IGestionClientes {
-    
-    public Cliente getCliente(String identificaion);
-    public boolean actualizarCliente(Cliente cliente);
-    public boolean registrarCliente(Cliente cliente);
+public class Pago {
     
 }

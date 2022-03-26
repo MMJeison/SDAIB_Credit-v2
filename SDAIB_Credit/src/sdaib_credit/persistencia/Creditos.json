@@ -4,5 +4,17 @@
   "montoInicial": "7000",
   "montoActual": "7000",
   "idAcreedor": "001"
+},
+{
+  "id": "00002",
+  "montoInicial": "23423",
+  "montoActual": "23423",
+  "idAcreedor": "001"
+},
+{
+  "id": "00003",
+  "montoInicial": "4500",
+  "montoActual": "4500",
+  "idAcreedor": "002"
 }
 ]

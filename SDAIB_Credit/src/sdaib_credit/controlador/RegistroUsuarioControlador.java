@@ -6,9 +6,10 @@
 package sdaib_credit.controlador;
 
 import java.awt.FlowLayout;
+import java.util.List;
 import javax.swing.JOptionPane;
-import sdaib_credit.modelo.GestorUsuarios;
-import sdaib_credit.modelo.IGestionUsuarios;
+import sdaib_credit.modelo.DAOUsuario;
+import sdaib_credit.modelo.IDAORegistros;
 import sdaib_credit.modelo.Usuario;
 import sdaib_credit.vista.UIRegistroUsuario;
 
@@ -25,12 +26,12 @@ public class RegistroUsuarioControlador implements IRegistroUsuario{
     private String username;
     private String password;
     private Byte nivelAcceso;
-    private IGestionUsuarios gestorUsuarios;
+    private IDAORegistros<Usuario> dAOUsuarios;
     private UIUsuarioAdministradorControlador uIUsuarioAdministradorControlador;
     
     public RegistroUsuarioControlador(){
         uIRegistroUsuario = new UIRegistroUsuario(this);
-        gestorUsuarios = new GestorUsuarios();
+        dAOUsuarios = new DAOUsuario();
         
         Main.uIPrincipal.getPanel().removeAll();
         Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
@@ -65,20 +66,21 @@ public class RegistroUsuarioControlador implements IRegistroUsuario{
 
     @Override
     public void registrar() {
-        Usuario usuario = new Usuario(nombre, identificacion, username, password, nivelAcceso);
-        Usuario user = gestorUsuarios.getUsuario(usuario);
-        if(user != null){
-            JOptionPane.showMessageDialog(null, "La parsona con identificacion '" + identificacion
-                    + "' ya tiene un usuario registrado");
-            return;
-        }
-        user = gestorUsuarios.getUsuario(username);
-        if(user != null){
-            JOptionPane.showMessageDialog(null, "El username '" + username + "' ya se encuentra registrado");
-            return;
+        List<Usuario> users = dAOUsuarios.getListRegistros();
+        for(Usuario user: users){
+            if(user.getIdentificacion().equals(identificacion)){
+                JOptionPane.showMessageDialog(null, "La parsona con identificacion '" + identificacion
+                        + "' ya tiene un usuario registrado");
+                return;
+            }
+            if(user.getUsername().equals(username)){
+                JOptionPane.showMessageDialog(null, "El username '" + username + "' ya se encuentra registrado");
+                return;
+            }
         }
         
-        boolean seRegistroCorrectamente = gestorUsuarios.registrarUsuario(usuario);
+        Usuario usuario = new Usuario(nombre, identificacion, username, password, nivelAcceso);
+        boolean seRegistroCorrectamente = dAOUsuarios.guardarRegistro(usuario);
         if(seRegistroCorrectamente){
             JOptionPane.showMessageDialog(null, "El usuario se ha registrado correctamente");
         }else{

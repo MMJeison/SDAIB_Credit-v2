@@ -24,31 +24,8 @@ public class Cliente extends Persona{
     public void addCredito(String idCredito){
         creditos.add(idCredito);
     }
-    
-    public static Cliente getCliente(String identificaion, IGestorDataBase gestor) {
-        Cliente aux = null;
-        List<Cliente> clientes = gestor.obtenerRegistros();
-        for(Cliente clt : clientes){
-            if(clt.identificacion.equals(identificaion)){
-                aux = clt;
-                break;
-            }
-        }
-        return aux;
-    }
-    
-    public static boolean actualizarCliente(Cliente cliente, IGestorDataBase gestor) {
-        List<Cliente> clientes = gestor.obtenerRegistros();
-        for(Cliente clt : clientes){
-            if(clt.identificacion.equals(cliente.identificacion)){
-                clt.creditos = cliente.creditos;
-                break;
-            }
-        }
-        return gestor.actualizarRegistros(clientes);
-    }
-    
-    public static boolean registrarCliente(Cliente cliente, IGestorDataBase gestor) {
-        return gestor.guardarRegistro(cliente);
+
+    public List<String> getCreditos() {
+        return creditos;
     }
 }

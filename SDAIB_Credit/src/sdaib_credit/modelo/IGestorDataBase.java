@@ -16,5 +16,5 @@ public interface IGestorDataBase {
     public boolean actualizarRegistros(List registro);
     public List obtenerRegistros();
     public boolean guardarRegistro(Object registro);
-    
+
 }

@@ -9,11 +9,10 @@ import java.awt.FlowLayout;
 import javax.swing.JOptionPane;
 import sdaib_credit.modelo.Cliente;
 import sdaib_credit.modelo.Credito;
-import sdaib_credit.modelo.GestorClientes;
-import sdaib_credit.modelo.GestorCreditos;
-import sdaib_credit.modelo.IGestionClientes;
+import sdaib_credit.modelo.DAOCliente;
+import sdaib_credit.modelo.DAOCredito;
+import sdaib_credit.modelo.IDAORegistros;
 import sdaib_credit.vista.UIRegistroCredito;
-import sdaib_credit.modelo.IGestionCreditos;
 
 /**
  *
@@ -26,14 +25,14 @@ public class RegistroCreditoControlador implements IRegistroCredito{
     private String id;
     private String monto;
     private String idAcreedor;
-    private IGestionCreditos gestorCreditos;
-    private IGestionClientes gestorClientes;
+    private IDAORegistros<Credito> dAOCreditos;
+    private IDAORegistros<Cliente> dAOClientes;
     private UIUsuarioAsesorControlador uIUsuarioControlador;
     
     public RegistroCreditoControlador() {
         uIRegistroCredito = new UIRegistroCredito(this);
-        gestorCreditos = new GestorCreditos();
-        gestorClientes = new GestorClientes();
+        dAOCreditos = new DAOCredito();
+        dAOClientes = new DAOCliente();
         
         Main.uIPrincipal.getPanel().removeAll();
         Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
@@ -57,22 +56,21 @@ public class RegistroCreditoControlador implements IRegistroCredito{
 
     @Override
     public void registar() {
-        Cliente cliente = gestorClientes.getCliente(idAcreedor);
+        Cliente cliente = dAOClientes.getRegistro(idAcreedor);
         if(cliente == null){
             JOptionPane.showMessageDialog(null, "La persona con identificacion '" + idAcreedor
                     + "' no se encuentra registrada");
             return;
         }
-        Credito crd = gestorCreditos.getCredito(id);
+        Credito crd = dAOCreditos.getRegistro(id);
         if(crd != null){
             JOptionPane.showMessageDialog(null, "Ya se ha registrado un credito con id: " + id);
             return;
         }
-        //credito.setIdAcreedor(cliente.getIdentificacion());
         Credito credito = new Credito(id, monto, idAcreedor);
         cliente.addCredito(id);
-        boolean seRegistroCorrectamente = gestorCreditos.registrarCredito(credito);
-        gestorClientes.actualizarCliente(cliente);
+        dAOClientes.actualizarRegistro(cliente);
+        boolean seRegistroCorrectamente = dAOCreditos.guardarRegistro(credito);
         if(seRegistroCorrectamente){
             JOptionPane.showMessageDialog(null, "El credito se ha registrado correctamente");
         }else{

@@ -7,8 +7,8 @@ package sdaib_credit.controlador;
 
 import java.awt.FlowLayout;
 import javax.swing.JOptionPane;
-import sdaib_credit.modelo.GestorUsuarios;
-import sdaib_credit.modelo.IGestionUsuarios;
+import sdaib_credit.modelo.DAOUsuario;
+import sdaib_credit.modelo.IDAORegistros;
 import sdaib_credit.modelo.Usuario;
 import sdaib_credit.vista.UILoginUsuario;
 
@@ -21,14 +21,14 @@ public class LoginUsuarioControlador implements ILoginUsuario {
     //private Usuario usuario;
     private String username;
     private String password;
-    private IGestionUsuarios gestorUsuarios;
+    private IDAORegistros<Usuario> dAOUsuarios;
     
     private UIUsuarioAdministradorControlador uIUsuarioAdministradorControlador;
     private UIUsuarioAsesorControlador uIUsuarioAsesorControlador;
     
     public LoginUsuarioControlador(){
         uILoginUsuario = new UILoginUsuario(this);
-        gestorUsuarios = new GestorUsuarios();
+        dAOUsuarios = new DAOUsuario();
         
         Main.uIPrincipal.getPanel().removeAll();
         Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
@@ -48,12 +48,12 @@ public class LoginUsuarioControlador implements ILoginUsuario {
 
     @Override
     public void ingresar() {
-        Usuario user = gestorUsuarios.getUsuario(username);
+        Usuario user = dAOUsuarios.getRegistro(username);
         if (user != null) {
-            if (user.passwordEqualsTo(password)) {
-                if(user.nivelAccesoEqualsTo((byte)3)){
+            if (user.getPassword().equals(password)) {
+                if(user.getNivelAcceso().equals((byte)3)){
                     uIUsuarioAdministradorControlador = new UIUsuarioAdministradorControlador();
-                }else if(user.nivelAccesoEqualsTo((byte)2)){
+                }else if(user.getNivelAcceso().equals((byte)2)){
                     uIUsuarioAsesorControlador = new UIUsuarioAsesorControlador();
                 }else{
                     JOptionPane.showMessageDialog(null, "Las acciones que puede realizar este usuario aun no han"

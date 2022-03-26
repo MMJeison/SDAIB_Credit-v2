@@ -3,7 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Escritorio/Proyecto/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Usuario.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIPrincipal.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/IDAORegistros.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroCredito.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOCredito.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIUsuarioAsesor.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIAsesor.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIAdministrador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIUsuarioAdministrador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UICajero.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UILoginUsuario.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOCliente.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroUsuario.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroCliente.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOUsuario.java</file>
         </group>
     </open-files>
 </project-private>

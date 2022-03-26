@@ -10,16 +10,18 @@ package sdaib_credit.modelo;
  * @author User
  */
 public abstract class Persona {
-    protected String nombre;
-    protected String identificacion;
+    private String nombre;
+    private String identificacion;
 
     public Persona(String nombre, String identificacion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
     }
-    @Override
-    public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", cedula=" + identificacion + '}';
+    public String getNombre() {
+        return nombre;
     }
-    
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
 }

@@ -8,8 +8,8 @@ package sdaib_credit.controlador;
 import java.awt.FlowLayout;
 import javax.swing.JOptionPane;
 import sdaib_credit.modelo.Cliente;
-import sdaib_credit.modelo.GestorClientes;
-import sdaib_credit.modelo.IGestionClientes;
+import sdaib_credit.modelo.DAOCliente;
+import sdaib_credit.modelo.IDAORegistros;
 import sdaib_credit.vista.UIRegistroCliente;
 
 /**
@@ -21,13 +21,13 @@ public class RegistroClienteControlador implements IRegistroCliente{
     //private Cliente cliente;
     private String nombre;
     private String identificacion;
-    private IGestionClientes gestiorClientes;
+    private IDAORegistros<Cliente> dAOClientes;
     private UIUsuarioAsesorControlador uIUsuarioControlador;
 
     public RegistroClienteControlador() {
         
         uIRegistroCliente = new UIRegistroCliente(this);
-        gestiorClientes = new GestorClientes();
+        dAOClientes = new DAOCliente();
         
         Main.uIPrincipal.getPanel().removeAll();
         Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
@@ -47,14 +47,14 @@ public class RegistroClienteControlador implements IRegistroCliente{
 
     @Override
     public void registrar() {
-        Cliente clt = gestiorClientes.getCliente(identificacion);
-        if(clt != null){
+        Cliente cliente = dAOClientes.getRegistro(identificacion);
+        if(cliente != null){
             JOptionPane.showMessageDialog(null, "La persona con identificacion '" + identificacion
                     + "' ya se encuentra registrada");
             return;
         }
-        Cliente cliente = new Cliente(nombre, identificacion);
-        boolean seRegistroCorrectamente = gestiorClientes.registrarCliente(cliente);
+        cliente = new Cliente(nombre, identificacion);
+        boolean seRegistroCorrectamente = dAOClientes.guardarRegistro(cliente);
         if(seRegistroCorrectamente){
             JOptionPane.showMessageDialog(null, "El cliente se ha registrado correctamente");
         }else{
