@@ -6,7 +6,6 @@
 package sdaib_credit.modelo;
 
 import java.util.List;
-
 /**
  *
  * @author User

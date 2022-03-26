@@ -9,11 +9,16 @@ package sdaib_credit.modelo;
  *
  * @author User
  */
-public class Pago {
+public class Cuota {
     
     private String monto;
-    private String id;
+    private String fechaDePago;
     private String idCredito;
     
+    public Cuota(String monto, String fechaPago, String idCredito){
+        this.monto = monto;
+        this.fechaDePago = fechaPago;
+        this.idCredito = idCredito;
+    }
     
 }

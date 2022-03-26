@@ -5,6 +5,7 @@
  */
 package sdaib_credit.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,12 +17,14 @@ public class Credito {
     private String montoInicial;
     private String montoActual;
     private String idAcreedor;
+    private List<Cuota> cuotas;
     
     public Credito(String id, String montoInicial, String montoActual, String idAcreedor) {
         this.id = id;
         this.montoInicial = montoInicial;
         this.montoActual = montoActual;
         this.idAcreedor = idAcreedor;
+        cuotas = new ArrayList<>();
     }
 
     public Credito(String id, String monto, String idAcreedor) {
@@ -29,6 +32,16 @@ public class Credito {
         this.montoInicial = monto;
         this.montoActual = monto;
         this.idAcreedor = idAcreedor;
+        cuotas = new ArrayList<>();
+    }
+    
+    public void definirCuotas(int nCuotas){
+        float cuota = Integer.valueOf(montoInicial)/nCuotas;
+        Cuota aux;
+        for(int i = 0; i < nCuotas; i++){
+            aux = new Cuota(String.valueOf(cuota), null, id);
+            cuotas.add(aux);
+        }
     }
 
     public String getId() {
