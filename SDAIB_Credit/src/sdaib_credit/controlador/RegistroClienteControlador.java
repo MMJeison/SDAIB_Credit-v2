@@ -10,29 +10,18 @@ import javax.swing.JOptionPane;
 import sdaib_credit.modelo.Cliente;
 import sdaib_credit.modelo.DAOCliente;
 import sdaib_credit.modelo.IDAORegistros;
-import sdaib_credit.vista.UIRegistroCliente;
 
 /**
  * @author User
  */
 public class RegistroClienteControlador implements IRegistroCliente{
-    
-    private UIRegistroCliente uIRegistroCliente;
     //private Cliente cliente;
-    private String nombre;
-    private String identificacion;
-    private IDAORegistros<Cliente> dAOClientes;
-    private UIUsuarioAsesorControlador uIUsuarioControlador;
+    public String nombre;
+    public String identificacion;
+    public IDAORegistros<Cliente> dAOClientes;
 
     public RegistroClienteControlador() {
-        
-        uIRegistroCliente = new UIRegistroCliente(this);
         dAOClientes = new DAOCliente();
-        
-        Main.uIPrincipal.getPanel().removeAll();
-        Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
-        Main.uIPrincipal.getPanel().add(uIRegistroCliente);
-        Main.uIPrincipal.getPanel().updateUI();
     }
 
     @Override
@@ -46,12 +35,12 @@ public class RegistroClienteControlador implements IRegistroCliente{
     }
 
     @Override
-    public void registrar() {
+    public boolean registrar() {
         Cliente cliente = dAOClientes.getRegistro(identificacion);
         if(cliente != null){
             JOptionPane.showMessageDialog(null, "La persona con identificacion '" + identificacion
-                    + "' ya se encuentra registrada");
-            return;
+                    + "' ye es un cliente registrado");
+            return false;
         }
         cliente = new Cliente(nombre, identificacion);
         boolean seRegistroCorrectamente = dAOClientes.guardarRegistro(cliente);
@@ -59,14 +48,8 @@ public class RegistroClienteControlador implements IRegistroCliente{
             JOptionPane.showMessageDialog(null, "El cliente se ha registrado correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error durante el registro");
-            return;
+            return false;
         }
-        uIUsuarioControlador = new UIUsuarioAsesorControlador();
+        return true;
     }
-
-    @Override
-    public void cancelar() {
-        uIUsuarioControlador = new UIUsuarioAsesorControlador();
-    }
-    
 }

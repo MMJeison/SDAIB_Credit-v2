@@ -5,7 +5,9 @@
  */
 package sdaib_credit.vista;
 
+import java.awt.Event;
 import javax.swing.JOptionPane;
+import sdaib_credit.controlador.IRegistroCliente;
 import sdaib_credit.controlador.IRegistroCredito;
 
 /**
@@ -17,10 +19,17 @@ public class UIRegistroCredito extends javax.swing.JPanel {
      * Creates new form UIRegistroCredito
      */
     private IRegistroCredito iRegistroCredito;
+    private IRegistroCliente iRegistroCliente;
     
-    public UIRegistroCredito(IRegistroCredito iUIRegistroCredito) {
+    public UIRegistroCredito(IRegistroCredito iUIRegistroCredito, IRegistroCliente iUIRegistroCliente) {
         initComponents();
         this.iRegistroCredito = iUIRegistroCredito;
+        this.iRegistroCliente = iUIRegistroCliente;
+        cargarListTiposCredito();
+        jLabel5.setEnabled(false);
+        jLabel6.setEnabled(false);
+        tfNombre.setEnabled(false);
+        tfIdentificacion.setEnabled(false);
     }
 
     /**
@@ -41,6 +50,17 @@ public class UIRegistroCredito extends javax.swing.JPanel {
         tfMonto = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         tfIdAcreedor = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        tfNombre = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tfIdentificacion = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tfInteres = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        btn_RegistrarCliente = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(700, 450));
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +81,16 @@ public class UIRegistroCredito extends javax.swing.JPanel {
                 tfIdCaretUpdate(evt);
             }
         });
+        tfId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIdActionPerformed(evt);
+            }
+        });
+        tfId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfIdKeyTyped(evt);
+            }
+        });
 
         jLabel1.setText("Id:");
 
@@ -74,12 +104,97 @@ public class UIRegistroCredito extends javax.swing.JPanel {
                 tfMontoCaretUpdate(evt);
             }
         });
+        tfMonto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfMontoKeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("Id acreedor");
 
         tfIdAcreedor.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 tfIdAcreedorCaretUpdate(evt);
+            }
+        });
+        tfIdAcreedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIdAcreedorActionPerformed(evt);
+            }
+        });
+        tfIdAcreedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfIdAcreedorKeyTyped(evt);
+            }
+        });
+
+        jLabel5.setText("Nombre:");
+
+        tfNombre.setDisabledTextColor(new java.awt.Color(204, 204, 255));
+        tfNombre.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                tfNombreCaretUpdate(evt);
+            }
+        });
+
+        jLabel6.setText("Identificacion:");
+
+        tfIdentificacion.setDisabledTextColor(new java.awt.Color(204, 204, 255));
+        tfIdentificacion.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                tfIdentificacionCaretUpdate(evt);
+            }
+        });
+        tfIdentificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIdentificacionActionPerformed(evt);
+            }
+        });
+        tfIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfIdentificacionKeyTyped(evt);
+            }
+        });
+
+        jLabel7.setText("Interes: ");
+
+        tfInteres.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                tfInteresCaretUpdate(evt);
+            }
+        });
+        tfInteres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfInteresActionPerformed(evt);
+            }
+        });
+        tfInteres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfInteresKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfInteresKeyTyped(evt);
+            }
+        });
+
+        jLabel8.setText("Tipo de credito:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        btn_RegistrarCliente.setText("Registrar Cliente");
+        btn_RegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RegistrarClienteActionPerformed(evt);
             }
         });
 
@@ -89,62 +204,120 @@ public class UIRegistroCredito extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(171, 171, 171)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tfInteres))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfIdAcreedor, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(47, 47, 47)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btn_RegistrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(tfIdAcreedor, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGap(207, 207, 207)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(138, 138, 138))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tfMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(26, 26, 26)
-                                    .addComponent(tfMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(26, 26, 26)
-                                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(98, Short.MAX_VALUE))
+                                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(192, 192, 192)
+                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfInteres, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfIdAcreedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                    .addComponent(tfIdAcreedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_RegistrarCliente))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void cargarListTiposCredito(){
+        jComboBox1.removeAllItems();
+        jComboBox1.addItem("Seleccionar");
+        jComboBox1.addItem("Vivienda");
+        jComboBox1.addItem("Libre Inversion");
+        jComboBox1.addItem("Estudio");
+        jComboBox1.addItem("Vehiculo");
+        jComboBox1.setSelectedIndex(0);
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (tfId.getText().length() < 1 || tfMonto.getText().length() < 1
-            || tfIdAcreedor.getText().length() < 1) {
+        if (tfId.getText().length() < 1 || tfMonto.getText().length() < 1 ||
+                tfInteres.getText().length() < 1 || jComboBox1.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Algunos campos estan vacios");
             return;
+        }
+        if(tfNombre.isEnabled()){
+            if(tfNombre.getText().length() < 1 || tfIdentificacion.getText().length() < 1){
+                JOptionPane.showMessageDialog(null, "Algunos campos estan vacios");
+                return;
+            }
+        }else{
+            if(tfIdAcreedor.getText().length() < 1){
+                JOptionPane.showMessageDialog(null, "Algunos campos estan vacios");
+                return;
+            }
         }
         iRegistroCredito.registar();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -162,19 +335,117 @@ public class UIRegistroCredito extends javax.swing.JPanel {
     }//GEN-LAST:event_tfMontoCaretUpdate
 
     private void tfIdAcreedorCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_tfIdAcreedorCaretUpdate
+        jLabel5.setEnabled(false);
+        jLabel6.setEnabled(false);
+        tfNombre.setEnabled(false);
+        tfIdentificacion.setEnabled(false);
         iRegistroCredito.recibirIdAcreedor(tfIdAcreedor.getText());
     }//GEN-LAST:event_tfIdAcreedorCaretUpdate
+
+    private void tfNombreCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_tfNombreCaretUpdate
+        iRegistroCliente.recibirNombre(tfNombre.getText());
+    }//GEN-LAST:event_tfNombreCaretUpdate
+
+    private void tfIdentificacionCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_tfIdentificacionCaretUpdate
+        iRegistroCliente.recibiridentificacion(tfIdentificacion.getText());
+    }//GEN-LAST:event_tfIdentificacionCaretUpdate
+
+    private void tfInteresCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_tfInteresCaretUpdate
+        iRegistroCredito.recibirInteres(tfInteres.getText());
+    }//GEN-LAST:event_tfInteresCaretUpdate
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void tfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfIdActionPerformed
+
+    private void tfInteresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfInteresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfInteresActionPerformed
+
+    private void tfIdAcreedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdAcreedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfIdAcreedorActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        if(jComboBox1.getSelectedItem()!=null){
+            iRegistroCredito.recibirTipoCredito(jComboBox1.getSelectedItem().toString());
+        }
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void btn_RegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegistrarClienteActionPerformed
+        tfIdAcreedor.setText("");
+        jLabel5.setEnabled(true);
+        jLabel6.setEnabled(true);
+        tfNombre.setEnabled(true);
+        tfIdentificacion.setEnabled(true);
+    }//GEN-LAST:event_btn_RegistrarClienteActionPerformed
+
+    private void tfIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdentificacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfIdentificacionActionPerformed
+
+    private void tfInteresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfInteresKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfInteresKeyPressed
+
+    private void tfInteresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfInteresKeyTyped
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfInteresKeyTyped
+
+    private void tfIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIdKeyTyped
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfIdKeyTyped
+
+    private void tfMontoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMontoKeyTyped
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfMontoKeyTyped
+
+    private void tfIdAcreedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIdAcreedorKeyTyped
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfIdAcreedorKeyTyped
+
+    private void tfIdentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfIdentificacionKeyTyped
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfIdentificacionKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btn_RegistrarCliente;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField tfId;
     private javax.swing.JTextField tfIdAcreedor;
+    private javax.swing.JTextField tfIdentificacion;
+    private javax.swing.JTextField tfInteres;
     private javax.swing.JTextField tfMonto;
+    private javax.swing.JTextField tfNombre;
     // End of variables declaration//GEN-END:variables
 }

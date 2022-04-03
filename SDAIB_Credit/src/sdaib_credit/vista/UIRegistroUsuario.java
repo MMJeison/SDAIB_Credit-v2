@@ -24,12 +24,20 @@ public class UIRegistroUsuario extends javax.swing.JPanel {
         initComponents();
         this.iRegistroUsuario = iUIRegistroUsuario;
         cargarNivelesAcceso();
+        
     }
     
     public void cargarNivelesAcceso(){
+        cbNivelAcceso.removeAllItems();
+        cbNivelAcceso.addItem("Seleccionar");
         cbNivelAcceso.addItem("Nivel 1 - Cajeros");
         cbNivelAcceso.addItem("Nivel 2 - Asesores");
         cbNivelAcceso.addItem("Nivel 3 - Administradores");
+        tfIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                evenKeyTyped(evt);
+            }
+        });
     }
     
     /**
@@ -225,7 +233,12 @@ public class UIRegistroUsuario extends javax.swing.JPanel {
         Byte item = (byte)cbNivelAcceso.getSelectedIndex();
         iRegistroUsuario.recibeNivelAcceso(item);
     }//GEN-LAST:event_cbNivelAccesoActionPerformed
-
+    private void evenKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

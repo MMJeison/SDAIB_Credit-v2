@@ -2,16 +2,25 @@
 {
   "creditos": [
     "00001",
-    "00002"
+    "0002",
+    "00004"
   ],
-  "nombre": "Cliente1",
-  "identificacion": "001"
+  "nombre": "Juan",
+  "identificacion": "12345"
 },
 {
   "creditos": [
-    "00003"
+    "0003"
   ],
-  "nombre": "Jorge",
-  "identificacion": "002"
+  "nombre": "Pedro",
+  "identificacion": "01234"
+},
+{
+  "creditos": [
+    "00005",
+    "0000001"
+  ],
+  "nombre": "Mateo",
+  "identificacion": "9876543"
 }
 ]

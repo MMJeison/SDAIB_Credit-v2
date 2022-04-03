@@ -18,6 +18,7 @@ public class UIUsuarioAsesorControlador {
     private IRegistroCliente iRegistroCliente;
     private IRegistroCredito iRegistroCredito;
     private ILoginUsuario iLoginUsuario;
+    private UIVerActInfClienteControlador uIVerActInfClienteControlador;
 
     public UIUsuarioAsesorControlador() {
         uIUsuarioAsesor = new UIUsuarioAsesor(this);
@@ -30,6 +31,9 @@ public class UIUsuarioAsesorControlador {
     
     public void registroCliente(){
         iRegistroCliente = new RegistroClienteControlador();
+    }
+    public void verActInfClientes(){
+        uIVerActInfClienteControlador = new UIVerActInfClienteControlador();
     }
     public void registroCredito(){
         iRegistroCredito = new RegistroCreditoControlador();

@@ -14,6 +14,8 @@ public interface IRegistroCredito {
     public void recibirId(String id);
     public void recibirMonto(String monto);
     public void recibirIdAcreedor(String idAcreedor);
+    public void recibirInteres(String intereses);
+    public void recibirTipoCredito(String tipoCredito);
     public void registar();
     public void cancelar();
     

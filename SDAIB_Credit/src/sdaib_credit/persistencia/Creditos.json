@@ -1,20 +1,62 @@
 [
 {
   "id": "00001",
-  "montoInicial": "7000",
-  "montoActual": "7000",
-  "idAcreedor": "001"
+  "montoInicial": "15000",
+  "montoActual": "12050.0",
+  "idAcreedor": "12345",
+  "tipoCredito": "Estudio",
+  "interes": "2",
+  "pagos": [
+    "12345678"
+  ]
 },
 {
-  "id": "00002",
-  "montoInicial": "23423",
-  "montoActual": "23423",
-  "idAcreedor": "001"
+  "id": "0002",
+  "montoInicial": "20000",
+  "montoActual": "18100.0",
+  "idAcreedor": "12345",
+  "tipoCredito": "Libre Inversion",
+  "interes": "3",
+  "pagos": [
+    "1234567"
+  ]
 },
 {
-  "id": "00003",
-  "montoInicial": "4500",
-  "montoActual": "4500",
-  "idAcreedor": "002"
+  "id": "0003",
+  "montoInicial": "18500",
+  "montoActual": "18870.0",
+  "idAcreedor": "01234",
+  "tipoCredito": "Vivienda",
+  "interes": "2",
+  "pagos": []
+},
+{
+  "id": "00004",
+  "montoInicial": "25000",
+  "montoActual": "26000.0",
+  "idAcreedor": "12345",
+  "tipoCredito": "Estudio",
+  "interes": "4",
+  "pagos": []
+},
+{
+  "id": "00005",
+  "montoInicial": "17000",
+  "montoActual": "15510.0",
+  "idAcreedor": "9876543",
+  "tipoCredito": "Vehiculo",
+  "interes": "3",
+  "pagos": [
+    "12342"
+  ]
+},
+{
+  "id": "0000001",
+  "montoInicial": "30000",
+  "montoActual": "31199.998",
+  "idAcreedor": "9876543",
+  "tipoCredito": "Vivienda",
+  "interes": "4",
+  "pagos": []
 }
 ]

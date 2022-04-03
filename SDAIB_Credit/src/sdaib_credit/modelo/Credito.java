@@ -17,33 +17,35 @@ public class Credito {
     private String montoInicial;
     private String montoActual;
     private String idAcreedor;
-    private List<Cuota> cuotas;
-    
-    public Credito(String id, String montoInicial, String montoActual, String idAcreedor) {
-        this.id = id;
-        this.montoInicial = montoInicial;
-        this.montoActual = montoActual;
-        this.idAcreedor = idAcreedor;
-        cuotas = new ArrayList<>();
-    }
+    private String tipoCredito;
+    private String interes;
+    private List<String> pagos;
 
-    public Credito(String id, String monto, String idAcreedor) {
+    public Credito(String id, String monto, String idAcreedor, String interes, String tipoCredito) {
         this.id = id;
         this.montoInicial = monto;
-        this.montoActual = monto;
         this.idAcreedor = idAcreedor;
-        cuotas = new ArrayList<>();
+        this.interes = interes;
+        pagos = new ArrayList<>();
+        calcularValorAPagar();
+        this.tipoCredito = tipoCredito;
     }
     
-    public void definirCuotas(int nCuotas){
-        float cuota = Integer.valueOf(montoInicial)/nCuotas;
-        Cuota aux;
-        for(int i = 0; i < nCuotas; i++){
-            aux = new Cuota(String.valueOf(cuota), null, id);
-            cuotas.add(aux);
-        }
+    private void calcularValorAPagar(){
+        int v = Integer.valueOf(montoInicial);
+        float i = Float.valueOf(interes) / 100;
+        float vp = v*(1 + i);
+        montoActual = String.valueOf(vp);
     }
-
+    public Float procesarPago(Pago pago){
+        Float montoAPagar = Float.valueOf(pago.getMonto());
+        Float montoAct = Float.valueOf(montoActual);
+        Float restante = montoAct - montoAPagar;
+        montoActual = String.valueOf(restante);
+        pagos.add(pago.getId());
+        return restante;
+    }
+    
     public String getId() {
         return id;
     }
@@ -59,4 +61,17 @@ public class Credito {
     public String getIdAcreedor() {
         return idAcreedor;
     }
+
+    public String getTipoCredito() {
+        return tipoCredito;
+    }
+    
+    public String getInteres() {
+        return interes;
+    }
+
+    public List<String> getPagos() {
+        return pagos;
+    }
+    
 }

@@ -11,7 +11,6 @@ public interface IRegistroCliente {
     
     public void recibirNombre(String nombre);
     public void recibiridentificacion(String identificacion);
-    public void registrar();
-    public void cancelar();
+    public boolean registrar();
     
 }

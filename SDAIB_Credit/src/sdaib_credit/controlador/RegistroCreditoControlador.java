@@ -9,7 +9,6 @@ import java.awt.FlowLayout;
 import javax.swing.JOptionPane;
 import sdaib_credit.modelo.Cliente;
 import sdaib_credit.modelo.Credito;
-import sdaib_credit.modelo.DAOCliente;
 import sdaib_credit.modelo.DAOCredito;
 import sdaib_credit.modelo.IDAORegistros;
 import sdaib_credit.vista.UIRegistroCredito;
@@ -25,19 +24,22 @@ public class RegistroCreditoControlador implements IRegistroCredito{
     private String id;
     private String monto;
     private String idAcreedor;
+    private String intereses;
+    private String tipoCredito;
     private IDAORegistros<Credito> dAOCreditos;
-    private IDAORegistros<Cliente> dAOClientes;
     private UIUsuarioAsesorControlador uIUsuarioControlador;
+    private RegistroClienteControlador registroClienteControlador;
     
     public RegistroCreditoControlador() {
-        uIRegistroCredito = new UIRegistroCredito(this);
+        registroClienteControlador = new RegistroClienteControlador();
+        uIRegistroCredito = new UIRegistroCredito(this, registroClienteControlador);
         dAOCreditos = new DAOCredito();
-        dAOClientes = new DAOCliente();
         
         Main.uIPrincipal.getPanel().removeAll();
         Main.uIPrincipal.getPanel().setLayout(new FlowLayout());
         Main.uIPrincipal.getPanel().add(uIRegistroCredito);
         Main.uIPrincipal.getPanel().updateUI();
+        
     }
     @Override
     public void recibirId(String id) {
@@ -55,21 +57,37 @@ public class RegistroCreditoControlador implements IRegistroCredito{
     }
 
     @Override
+    public void recibirInteres(String intereses) {
+        this.intereses = intereses;
+    }
+    
+    @Override
+    public void recibirTipoCredito(String tipoCredito) {
+        this.tipoCredito = tipoCredito;
+    }
+    
+    @Override
     public void registar() {
-        Cliente cliente = dAOClientes.getRegistro(idAcreedor);
-        if(cliente == null){
-            JOptionPane.showMessageDialog(null, "La persona con identificacion '" + idAcreedor
-                    + "' no se encuentra registrada");
-            return;
-        }
         Credito crd = dAOCreditos.getRegistro(id);
         if(crd != null){
             JOptionPane.showMessageDialog(null, "Ya se ha registrado un credito con id: " + id);
             return;
         }
-        Credito credito = new Credito(id, monto, idAcreedor);
+        boolean seRegistroCliente = false;
+        if(idAcreedor == null || idAcreedor.equals("")){
+            seRegistroCliente = registroClienteControlador.registrar();
+            if(!seRegistroCliente) return;
+            idAcreedor = registroClienteControlador.identificacion;
+        }
+        Cliente cliente = registroClienteControlador.dAOClientes.getRegistro(idAcreedor);
+        if(cliente == null){
+            JOptionPane.showMessageDialog(null, "La persona con identificacion '" + idAcreedor
+                    + "' no se encuentra registrada");
+            return;
+        }
+        Credito credito = new Credito(id, monto, idAcreedor, intereses, tipoCredito);
         cliente.addCredito(id);
-        dAOClientes.actualizarRegistro(cliente);
+        registroClienteControlador.dAOClientes.actualizarRegistro(cliente);
         boolean seRegistroCorrectamente = dAOCreditos.guardarRegistro(credito);
         if(seRegistroCorrectamente){
             JOptionPane.showMessageDialog(null, "El credito se ha registrado correctamente");
@@ -84,5 +102,7 @@ public class RegistroCreditoControlador implements IRegistroCredito{
     public void cancelar() {
         uIUsuarioControlador = new UIUsuarioAsesorControlador();
     }
+
+
     
 }

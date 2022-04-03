@@ -25,6 +25,7 @@ public class LoginUsuarioControlador implements ILoginUsuario {
     
     private UIUsuarioAdministradorControlador uIUsuarioAdministradorControlador;
     private UIUsuarioAsesorControlador uIUsuarioAsesorControlador;
+    private UIUsuarioCajeroControlador uIUsuarioCajeroControlador;
     
     public LoginUsuarioControlador(){
         uILoginUsuario = new UILoginUsuario(this);
@@ -56,8 +57,7 @@ public class LoginUsuarioControlador implements ILoginUsuario {
                 }else if(user.getNivelAcceso().equals((byte)2)){
                     uIUsuarioAsesorControlador = new UIUsuarioAsesorControlador();
                 }else{
-                    JOptionPane.showMessageDialog(null, "Las acciones que puede realizar este usuario aun no han"
-                            + " sido desarrolladas");
+                    uIUsuarioCajeroControlador = new UIUsuarioCajeroControlador();
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "La contraseña es incorrecta");

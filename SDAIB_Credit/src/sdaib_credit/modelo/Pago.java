@@ -12,6 +12,32 @@ package sdaib_credit.modelo;
 public class Pago {
     
     private String id;
-    private String idCuota;
+    private String idCredito;
+    private String monto;
+    private String fechaPago;
+
+    public Pago(String id, String idCredito, String monto, String fechaPago) {
+        this.id = id;
+        this.idCredito = idCredito;
+        this.monto = monto;
+        this.fechaPago = fechaPago;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getIdCredito() {
+        return idCredito;
+    }
+
+    public String getMonto() {
+        return monto;
+    }
+
+    public String getFechaPago() {
+        return fechaPago;
+    }
+    
     
 }
