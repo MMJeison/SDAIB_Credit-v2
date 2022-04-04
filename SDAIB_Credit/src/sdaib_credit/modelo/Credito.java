@@ -19,6 +19,7 @@ public class Credito {
     private String idAcreedor;
     private String tipoCredito;
     private String interes;
+    private boolean pagado;
     private List<String> pagos;
 
     public Credito(String id, String monto, String idAcreedor, String interes, String tipoCredito) {
@@ -29,6 +30,7 @@ public class Credito {
         pagos = new ArrayList<>();
         calcularValorAPagar();
         this.tipoCredito = tipoCredito;
+        pagado = false;
     }
     
     private void calcularValorAPagar(){
@@ -43,6 +45,9 @@ public class Credito {
         Float restante = montoAct - montoAPagar;
         montoActual = String.valueOf(restante);
         pagos.add(pago.getId());
+        if(restante == 0){
+            pagado = true;
+        }
         return restante;
     }
     
@@ -68,6 +73,10 @@ public class Credito {
     
     public String getInteres() {
         return interes;
+    }
+
+    public boolean isPagado() {
+        return pagado;
     }
 
     public List<String> getPagos() {

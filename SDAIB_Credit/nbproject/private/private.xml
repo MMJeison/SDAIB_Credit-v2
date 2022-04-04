@@ -3,12 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIPago.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/UIVerActInfClienteControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/IRegistroCredito.java</file>
             <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroCredito.java</file>
-            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/RegistroClienteControlador.java</file>
-            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroUsuario.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/UIUsuarioAsesorControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/PagoControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOPago.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/UIUsuarioCajeroControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/IRegistroCliente.java</file>
             <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIUsuarioAsesor.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/persistencia/Creditos.json</file>
             <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/RegistroCreditoControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIUsuarioAdministrador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/RegistroUsuarioControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIVerActInfClientes.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/persistencia/Usuarios.json</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/RegistroClienteControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/controlador/LoginUsuarioControlador.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIUsuarioCajero.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Usuario.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/persistencia/Clientes.json</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOCredito.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Persona.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/DAOCliente.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Pago.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/persistencia/Pagos.json</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/vista/UIRegistroUsuario.java</file>
             <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Credito.java</file>
+            <file>file:/D:/Escritorio/ProyectoAnalisisII/Proyectov2/SDAIB_Credit-v2/SDAIB_Credit/src/sdaib_credit/modelo/Cliente.java</file>
         </group>
     </open-files>
 </project-private>

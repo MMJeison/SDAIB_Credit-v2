@@ -315,8 +315,8 @@ public class UIVerActInfClientes extends javax.swing.JPanel {
             String[] str = new String[3];
             str[0] = cred.getId();
             str[1] = cred.getTipoCredito();
-            str[2] = "SI";
-            if(Float.valueOf(cred.getMontoActual()) != 0) str[2] = "NO";
+            str[2] = "NO";
+            if(cred.isPagado()) str[2] = "SI";
             modelo.addRow(str);
         }
         
