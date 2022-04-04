@@ -1,48 +1,17 @@
 [
 {
-  "id": "123456",
-  "montoInicial": "20000",
+  "id": "123424",
+  "montoInicial": "30500",
   "montoActual": "0.0",
-  "idAcreedor": "12345",
-  "tipoCredito": "Libre Inversion",
-  "interes": "4",
-  "pagado": true,
-  "pagos": [
-    "12342"
-  ]
-},
-{
-  "id": "134124",
-  "montoInicial": "23423",
-  "montoActual": "24125.69",
-  "idAcreedor": "12345",
-  "tipoCredito": "Estudio",
-  "interes": "3",
-  "pagado": false,
-  "pagos": []
-},
-{
-  "id": "242112",
-  "montoInicial": "345325",
-  "montoActual": "0.0",
-  "idAcreedor": "12345",
+  "idAcreedor": "1424233",
   "tipoCredito": "Vehiculo",
   "interes": "4",
   "pagado": true,
   "pagos": [
-    "123412",
+    "23434",
+    "23452",
     "12341",
-    "342341"
+    "32958"
   ]
-},
-{
-  "id": "123412",
-  "montoInicial": "123412",
-  "montoActual": "128348.48",
-  "idAcreedor": "12345",
-  "tipoCredito": "Libre Inversion",
-  "interes": "4",
-  "pagado": false,
-  "pagos": []
 }
 ]

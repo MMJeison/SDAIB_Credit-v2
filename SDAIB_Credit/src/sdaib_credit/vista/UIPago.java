@@ -38,7 +38,7 @@ public class UIPago extends javax.swing.JPanel {
         });
         tf_MontoAPagar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                evenKeyTyped(evt);
+                evenKeyTyped2(evt);
             }
         });
     }
@@ -299,6 +299,16 @@ public class UIPago extends javax.swing.JPanel {
     private void evenKeyTyped(java.awt.event.KeyEvent evt) {                                          
         if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
                 evt.getKeyCode() != 8 && evt.getKeyCode() != 127){
+            evt.consume();
+        }
+    }
+    private void evenKeyTyped2(java.awt.event.KeyEvent evt) {                                          
+        if(!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9') &&
+                evt.getKeyCode() != 8 && evt.getKeyCode() != 127 &&
+                evt.getKeyChar() != '.'){
+            evt.consume();
+        }
+        if(evt.getKeyChar() == '.' && tf_MontoAPagar.getText().contains(".")){
             evt.consume();
         }
     }

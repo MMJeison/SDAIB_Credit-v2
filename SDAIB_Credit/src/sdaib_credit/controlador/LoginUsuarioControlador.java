@@ -16,19 +16,18 @@ import sdaib_credit.vista.UILoginUsuario;
  * @author User
  */
 public class LoginUsuarioControlador implements ILoginUsuario {
-    
+    private UIUsuarioAdministradorControlador uIUsuarioAdministradorControlador;
+    private UIUsuarioAsesorControlador uIUsuarioAsesorControlador;
+    private UIUsuarioCajeroControlador uIUsuarioCajeroControlador;
     private UILoginUsuario uILoginUsuario;
     //private Usuario usuario;
     private String username;
     private String password;
     private IDAORegistros<Usuario> dAOUsuarios;
     
-    private UIUsuarioAdministradorControlador uIUsuarioAdministradorControlador;
-    private UIUsuarioAsesorControlador uIUsuarioAsesorControlador;
-    private UIUsuarioCajeroControlador uIUsuarioCajeroControlador;
-    
     public LoginUsuarioControlador(){
         uILoginUsuario = new UILoginUsuario(this);
+        
         dAOUsuarios = new DAOUsuario();
         
         Main.uIPrincipal.getPanel().removeAll();

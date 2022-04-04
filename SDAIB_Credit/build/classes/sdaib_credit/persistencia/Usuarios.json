@@ -14,5 +14,13 @@
   "nivelAcceso": 2,
   "nombre": "Asesor1",
   "identificacion": "24124"
+},
+{
+  "username": "Caj1",
+  "password": "Password1",
+  "habilitado": true,
+  "nivelAcceso": 1,
+  "nombre": "Cajero1",
+  "identificacion": "23412"
 }
 ]

@@ -60,8 +60,7 @@ public class PagoControlador {
     }
     public boolean realizarPago(){
         credito = dAOCreditos.getRegistro(idCredito);
-        pago = new Pago(idPago, credito.getId(), montoAPagar, fecha);
-        credito.procesarPago(pago);
+        pago = new Pago(idPago, credito, montoAPagar, fecha);
         dAOCreditos.actualizarRegistro(credito);
         return dAOPagos.guardarRegistro(pago);
     }

@@ -28,9 +28,9 @@ public class Credito {
         this.idAcreedor = idAcreedor;
         this.interes = interes;
         pagos = new ArrayList<>();
-        calcularValorAPagar();
         this.tipoCredito = tipoCredito;
         pagado = false;
+        calcularValorAPagar();
     }
     
     private void calcularValorAPagar(){

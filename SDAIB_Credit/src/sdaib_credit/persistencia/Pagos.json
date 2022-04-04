@@ -1,26 +1,150 @@
 [
 {
-  "id": "12342",
-  "idCredito": "123456",
-  "monto": "20800",
-  "fechaPago": "03.04.2022"
+  "id": "64638",
+  "credito": {
+    "id": "41234",
+    "montoInicial": "30500",
+    "montoActual": "26019.998",
+    "idAcreedor": "542313",
+    "tipoCredito": "Libre Inversion",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "64638"
+    ]
+  },
+  "monto": "5700",
+  "fechaPago": "04.04.2022"
 },
 {
-  "id": "123412",
-  "idCredito": "242112",
-  "monto": "125000",
-  "fechaPago": "03.04.2022"
+  "id": "6424",
+  "credito": {
+    "id": "41234",
+    "montoInicial": "30500",
+    "montoActual": "16019.998",
+    "idAcreedor": "542313",
+    "tipoCredito": "Libre Inversion",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "64638",
+      "6424"
+    ]
+  },
+  "monto": "10000",
+  "fechaPago": "04.04.2022"
+},
+{
+  "id": "24563",
+  "credito": {
+    "id": "41234",
+    "montoInicial": "30500",
+    "montoActual": "7019.998",
+    "idAcreedor": "542313",
+    "tipoCredito": "Libre Inversion",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "64638",
+      "6424",
+      "24563"
+    ]
+  },
+  "monto": "9000",
+  "fechaPago": "04.04.2022"
+},
+{
+  "id": "42353",
+  "credito": {
+    "id": "41234",
+    "montoInicial": "30500",
+    "montoActual": "0.0",
+    "idAcreedor": "542313",
+    "tipoCredito": "Libre Inversion",
+    "interes": "4",
+    "pagado": true,
+    "pagos": [
+      "64638",
+      "6424",
+      "24563",
+      "42353"
+    ]
+  },
+  "monto": "7019",
+  "fechaPago": "04.04.2022"
+},
+{
+  "id": "23434",
+  "credito": {
+    "id": "123424",
+    "montoInicial": "30500",
+    "montoActual": "23919.018",
+    "idAcreedor": "1424233",
+    "tipoCredito": "Vehiculo",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "23434"
+    ]
+  },
+  "monto": "7800.980",
+  "fechaPago": "04.04.2022"
+},
+{
+  "id": "23452",
+  "credito": {
+    "id": "123424",
+    "montoInicial": "30500",
+    "montoActual": "13419.018",
+    "idAcreedor": "1424233",
+    "tipoCredito": "Vehiculo",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "23434",
+      "23452"
+    ]
+  },
+  "monto": "10500",
+  "fechaPago": "04.04.2022"
 },
 {
   "id": "12341",
-  "idCredito": "242112",
-  "monto": "211344",
-  "fechaPago": "03.04.2022"
+  "credito": {
+    "id": "123424",
+    "montoInicial": "30500",
+    "montoActual": "8419.018",
+    "idAcreedor": "1424233",
+    "tipoCredito": "Vehiculo",
+    "interes": "4",
+    "pagado": false,
+    "pagos": [
+      "23434",
+      "23452",
+      "12341"
+    ]
+  },
+  "monto": "5000",
+  "fechaPago": "04.04.2022"
 },
 {
-  "id": "342341",
-  "idCredito": "242112",
-  "monto": "22794",
-  "fechaPago": "03.04.2022"
+  "id": "32958",
+  "credito": {
+    "id": "123424",
+    "montoInicial": "30500",
+    "montoActual": "0.0",
+    "idAcreedor": "1424233",
+    "tipoCredito": "Vehiculo",
+    "interes": "4",
+    "pagado": true,
+    "pagos": [
+      "23434",
+      "23452",
+      "12341",
+      "32958"
+    ]
+  },
+  "monto": "8419.018",
+  "fechaPago": "04.04.2022"
 }
 ]
