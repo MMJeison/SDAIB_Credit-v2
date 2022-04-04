@@ -208,7 +208,7 @@ public class UIActDesacUsuarios extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_ConsultarActionPerformed
 
     private void btn_CambiarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CambiarEstadoActionPerformed
-        if(btn_CambiarEstado.getText().equals("Hablilitar")){
+        if(btn_CambiarEstado.getText().equals("Habilitar")){
             habInhabUsersControlador.habilitarUsuario();
             lbl_EstadoCuenta.setText("Habilitado");
             btn_CambiarEstado.setText("Inhabilitar");
