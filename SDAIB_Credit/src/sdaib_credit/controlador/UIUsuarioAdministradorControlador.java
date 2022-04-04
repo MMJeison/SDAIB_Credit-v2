@@ -13,7 +13,7 @@ import sdaib_credit.vista.UIUsuarioAdministrador;
  * @author User
  */
 public class UIUsuarioAdministradorControlador {
-    
+    private HabInhabUsersControlador habInhabUsersControlador;
     private UIUsuarioAdministrador uIUsuarioAdministrador;
     private IRegistroUsuario iRegistroUsuario;
     private ILoginUsuario iLoginUsuario;
@@ -31,7 +31,9 @@ public class UIUsuarioAdministradorControlador {
     public void registrarUsuario(){
         iRegistroUsuario = new RegistroUsuarioControlador();
     }
-    
+    public void habInhabCuentas(){
+        habInhabUsersControlador = new HabInhabUsersControlador();
+    }
     public void cerrarSesion(){
         iLoginUsuario = new LoginUsuarioControlador();
     }

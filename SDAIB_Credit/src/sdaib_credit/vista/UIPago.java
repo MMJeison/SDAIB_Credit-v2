@@ -255,6 +255,10 @@ public class UIPago extends javax.swing.JPanel {
         Credito credito = pagoControlador.getCredito(tf_IngrIdCredito.getText());
         Float montoAPagar = Float.valueOf(tf_MontoAPagar.getText());
         Float montoFaltante = Float.valueOf(credito.getMontoActual());
+        if(montoAPagar == 0){
+            JOptionPane.showMessageDialog(null, "El monto a pagar debe ser mayor a 0");
+            return;
+        }
         if(montoAPagar > montoFaltante){
             JOptionPane.showMessageDialog(null, "El monto ingresado excede el monto faltante del credito");
             return;

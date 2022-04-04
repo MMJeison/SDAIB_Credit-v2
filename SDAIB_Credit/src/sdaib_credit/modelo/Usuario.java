@@ -15,7 +15,7 @@ public class Usuario extends Persona{
     
     private String username;
     private String password;
-    private boolean estaHabilitado;
+    private boolean habilitado;
     private Byte nivelAcceso;
 
     public Usuario(String nombre, String identificacion, String username, String password, Byte nivelAcceso) {
@@ -23,7 +23,7 @@ public class Usuario extends Persona{
         this.username = username;
         this.password = password;
         this.nivelAcceso = nivelAcceso;
-        estaHabilitado = true;
+        habilitado = true;
     }
     
     public String getUsername() {
@@ -38,8 +38,16 @@ public class Usuario extends Persona{
         return nivelAcceso;
     }
 
-    public boolean isEstaHabilitado() {
-        return estaHabilitado;
+    public boolean isHabilitado() {
+        return habilitado;
+    }
+    
+    public void habilitar(){
+        habilitado = true;
+    }
+    
+    public void inhabilitar(){
+        habilitado = false;
     }
     
 }

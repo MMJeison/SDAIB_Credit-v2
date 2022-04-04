@@ -52,6 +52,10 @@ public class LoginUsuarioControlador implements ILoginUsuario {
         Usuario user = dAOUsuarios.getRegistro(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
+                if(!user.isHabilitado()){
+                    JOptionPane.showMessageDialog(null, "Esta cuenta esta inhabilitada :(");
+                    return;
+                }
                 if(user.getNivelAcceso().equals((byte)3)){
                     uIUsuarioAdministradorControlador = new UIUsuarioAdministradorControlador();
                 }else if(user.getNivelAcceso().equals((byte)2)){
