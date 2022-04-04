@@ -212,10 +212,12 @@ public class UIActDesacUsuarios extends javax.swing.JPanel {
             habInhabUsersControlador.habilitarUsuario();
             lbl_EstadoCuenta.setText("Habilitado");
             btn_CambiarEstado.setText("Inhabilitar");
+            JOptionPane.showMessageDialog(null, "Se ha habilitado la cuenta de usuario");
         }else{
             habInhabUsersControlador.inhabilitarUsuario();
             lbl_EstadoCuenta.setText("Inhabilitado");
             btn_CambiarEstado.setText("Habilitar");
+            JOptionPane.showMessageDialog(null, "Se ha inhabilitado la cuenta de usuario");
         }
     }//GEN-LAST:event_btn_CambiarEstadoActionPerformed
  
